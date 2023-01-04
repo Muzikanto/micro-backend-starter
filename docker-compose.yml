@@ -11,14 +11,24 @@ services:
       - 4000:4000
     networks:
       - app_network
-  microservice:
-    container_name: microservice
+  microservice_tcp:
+    container_name: microservice_tcp
     build:
       context: .
-      dockerfile: ./apps/microservice/Dockerfile
+      dockerfile: apps/microservice-tcp/Dockerfile
     restart: always
     ports:
       - 4001:4001
+    networks:
+      - app_network
+  microservice_graphql:
+    container_name: microservice_graphql
+    build:
+      context: .
+      dockerfile: apps/microservice-graphql/Dockerfile
+    restart: always
+    ports:
+      - 4002:4002
     networks:
       - app_network
 

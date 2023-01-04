@@ -9,7 +9,7 @@ RUN apk update
 WORKDIR /app
 RUN npm install --global turbo
 COPY . .
-RUN turbo prune --scope=microservice --docker
+RUN turbo prune --scope=microservice-graphql --docker
 
 # Add lockfile and package.json's of isolated subworkspace
 FROM node:alpine AS installer
@@ -21,13 +21,13 @@ WORKDIR /app
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/package-lock.json ./package-lock.json
-COPY /apps/microservice/.env .
+COPY /apps/microservice-graphql .
 RUN npm install
 
 # Build the project
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
-RUN npx turbo run build --filter=microservice...
+RUN npx turbo run build --filter=microservice-graphql...
 
 FROM node:alpine AS runner
 WORKDIR /app
@@ -39,4 +39,4 @@ USER nestjs
 
 COPY --from=installer /app .
 
-CMD node apps/microservice/dist/main.js
+CMD node apps/microservice-graphql/dist/main.js

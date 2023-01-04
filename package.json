@@ -17,7 +17,8 @@
   },
   "workspaces": [
     "apps/gateway",
-    "apps/microservice",
+    "apps/microservice-tcp",
+    "apps/microservice-graphql",
     "packages/shared"
   ],
   "author": "",

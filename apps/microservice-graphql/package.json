@@ -1,5 +1,5 @@
 {
-  "name": "microservice",
+  "name": "microservice-graphql",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -23,14 +23,20 @@
     "pretty": "pretty-quick --staged"
   },
   "dependencies": {
+    "@apollo/federation": "^0.38.1",
+    "@apollo/subgraph": "^2.2.2",
     "@fastify/static": "^6.6.0",
+    "@nestjs/apollo": "^10.1.7",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
+    "@nestjs/graphql": "^10.1.7",
     "@nestjs/microservices": "^9.2.1",
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/platform-fastify": "^9.2.1",
     "@nestjs/swagger": "^6.1.4",
+    "apollo-server-core": "^3.11.1",
+    "apollo-server-express": "^3.11.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "reflect-metadata": "^0.1.13",

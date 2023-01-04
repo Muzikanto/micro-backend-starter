@@ -8,9 +8,9 @@ import { AppConfig } from 'shared/modules/config/app.config';
 async function bootstrap() {
   const logger = new Logger('Bootstrap');
 
-  const fastifyAdapter = new FastifyAdapter();
+  // const fastifyAdapter = new FastifyAdapter();
 
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, fastifyAdapter);
+  const app = await NestFactory.create(AppModule);
   const config = app.get(AppConfig);
 
   app.enableCors({
@@ -28,9 +28,9 @@ async function bootstrap() {
     SwaggerModule.setup('swagger', app, document);
   }
 
-  await app.listen(config.port, '0.0.0.0', (_, address) => {
-    logger.debug(`Service available on ${address}`);
-  });
+  await app.listen(config.port);
+
+  logger.debug(`Service available on http://0.0.0.0:${config.port}`);
 }
 
 bootstrap();

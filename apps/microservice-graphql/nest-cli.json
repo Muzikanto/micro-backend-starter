@@ -2,5 +2,5 @@
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
-  "entryFile": "apps/microservice/src/main"
+  "entryFile": "apps/microservice-graphql/src/main"
 }

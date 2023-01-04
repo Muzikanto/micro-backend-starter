@@ -9,7 +9,7 @@ export class ExampleController {
   constructor(private readonly exampleService: ExampleService) {}
 
   @MessagePattern('hello')
-  hello(@Args() args: ExampleHelloDto): string {
+  helloTcp(@Args() args: ExampleHelloDto): string {
     return this.exampleService.getHello(args.user);
   }
 }
