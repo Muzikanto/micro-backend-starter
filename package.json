@@ -1,0 +1,25 @@
+{
+  "name": "app-backend",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^2.8.1",
+    "pretty-quick": "^3.1.3",
+    "turbo": "^1.2.5",
+    "husky": "^8.0.2"
+  },
+  "scripts": {
+    "dev": "npx turbo dev",
+    "build": "npx turbo build",
+    "start": "npx turbo start",
+    "lint": "npx turbo lint",
+    "pretty": "npx turbo pretty"
+  },
+  "workspaces": [
+    "apps/gateway",
+    "apps/microservice",
+    "packages/shared"
+  ],
+  "author": "",
+  "license": "ISC"
+}

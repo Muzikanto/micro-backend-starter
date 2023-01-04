@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  gateway:
+    container_name: gateway
+    build:
+      context: .
+      dockerfile: ./apps/gateway/Dockerfile
+    restart: always
+    ports:
+      - 4000:4000
+    networks:
+      - app_network
+  microservice:
+    container_name: microservice
+    build:
+      context: .
+      dockerfile: ./apps/microservice/Dockerfile
+    restart: always
+    ports:
+      - 4001:4001
+    networks:
+      - app_network
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    external: true
