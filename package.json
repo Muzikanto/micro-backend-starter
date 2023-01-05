@@ -19,6 +19,7 @@
     "apps/gateway",
     "apps/microservice-tcp",
     "apps/microservice-graphql",
+    "apps/microservice-cqrs",
     "packages/shared"
   ],
   "author": "",
