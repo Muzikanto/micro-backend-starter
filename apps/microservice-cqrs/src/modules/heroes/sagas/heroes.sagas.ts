@@ -11,14 +11,13 @@ const itemId = '0';
 export class HeroesGameSagas {
   @Saga()
   dragonKilled = (events$: Observable<any>): Observable<ICommand> => {
-    return events$
-      .pipe(
-        ofType(HeroKilledDragonEvent),
-        delay(1000),
-        map(event => {
-          console.log(('Inside [HeroesGameSagas] Saga'));
-          return new DropAncientItemCommand(event.heroId, itemId);
-        }),
-      );
-  }
+    return events$.pipe(
+      ofType(HeroKilledDragonEvent),
+      delay(1000),
+      map((event) => {
+        console.log('Inside [HeroesGameSagas] Saga');
+        return new DropAncientItemCommand(event.heroId, itemId);
+      }),
+    );
+  };
 }

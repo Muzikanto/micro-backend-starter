@@ -1,22 +1,24 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
 import { HeroRepository } from '../../repository/hero.repository';
-import { KillDragonCommand } from '../impl/kill-dragon.command';
+import { DropAncientItemCommand } from '../impl/drop-ancient-item.command';
 
-@CommandHandler(KillDragonCommand)
-export class KillDragonHandler implements ICommandHandler<KillDragonCommand> {
+@CommandHandler(DropAncientItemCommand)
+export class DropAncientItemHandler
+  implements ICommandHandler<DropAncientItemCommand>
+{
   constructor(
     private readonly repository: HeroRepository,
     private readonly publisher: EventPublisher,
   ) {}
 
-  async execute(command: KillDragonCommand) {
-    console.log(('KillDragonCommand...'));
+  async execute(command: DropAncientItemCommand) {
+    console.log('Async DropAncientItemCommand...');
 
-    const { heroId, dragonId } = command;
+    const { heroId, itemId } = command;
     const hero = this.publisher.mergeObjectContext(
       await this.repository.findOneById(+heroId),
     );
-    hero.killEnemy(dragonId);
+    hero.addItem(itemId);
     hero.commit();
   }
 }

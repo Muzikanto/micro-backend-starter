@@ -24,6 +24,12 @@
     "deploy": {
       "dependsOn": ["build", "test", "lint"],
       "outputs": []
+    },
+    "gateway#dev": {
+      "dependsOn": ["microservice-graphql#dev", "microservice-tcp#dev"]
+    },
+    "gateway#start": {
+      "dependsOn": ["microservice-graphql#start", "microservice-tcp#start"]
     }
   },
   "globalDependencies": [".npmrc", ".prettierrc.json"],

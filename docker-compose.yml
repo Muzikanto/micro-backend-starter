@@ -1,39 +1,54 @@
 version: '3'
 
 services:
-  gateway:
-    container_name: gateway
-    build:
-      context: .
-      dockerfile: ./apps/gateway/Dockerfile
+  postgres:
+    container_name: postgres
+    image: postgres:latest
     restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - 4000:4000
-    networks:
-      - app_network
-  microservice_tcp:
-    container_name: microservice_tcp
-    build:
-      context: .
-      dockerfile: apps/microservice-tcp/Dockerfile
-    restart: always
-    ports:
-      - 4001:4001
-    networks:
-      - app_network
-  microservice_graphql:
-    container_name: microservice_graphql
-    build:
-      context: .
-      dockerfile: apps/microservice-graphql/Dockerfile
-    restart: always
-    ports:
-      - 4002:4002
-    networks:
-      - app_network
+      - 5432:5432
+    volumes:
+      - ./databases/postgres:/var/lib/postgresql/data
+#    networks:
+#      - app_network
+
+#  gateway:
+#    container_name: gateway
+#    build:
+#      context: .
+#      dockerfile: ./apps/gateway/Dockerfile
+#    restart: always
+#    ports:
+#      - 4000:4000
+#    networks:
+#      - app_network
+#  microservice_tcp:
+#    container_name: microservice_tcp
+#    build:
+#      context: .
+#      dockerfile: apps/microservice-tcp/Dockerfile
+#    restart: always
+#    ports:
+#      - 4001:4001
+#    networks:
+#      - app_network
+#  microservice_graphql:
+#    container_name: microservice_graphql
+#    build:
+#      context: .
+#      dockerfile: apps/microservice-graphql/Dockerfile
+#    restart: always
+#    ports:
+#      - 4002:4002
+#    networks:
+#      - app_network
 
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
-networks:
-  app_network:
-    external: true
+#networks:
+#  app_network:
+#    external: true
