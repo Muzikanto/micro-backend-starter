@@ -20,7 +20,10 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config test/jest-e2e.json",
-    "pretty": "pretty-quick --staged"
+    "pretty": "pretty-quick --staged",
+    "dev:check": "tsc --noEmit --project tsconfig.build.json",
+    "lint:fix": "eslint ./src --ext .ts,.tsx --fix",
+    "clean": "rm -rf ./dist"
   },
   "dependencies": {
     "@apollo/gateway": "^2.2.2",
@@ -59,7 +62,8 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "4.1.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "tsconfig": "*"
   },
   "jest": {
     "moduleFileExtensions": [

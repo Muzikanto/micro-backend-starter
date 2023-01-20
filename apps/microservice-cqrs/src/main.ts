@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { ApplicationModule } from './app.module';
-import {Logger} from "@nestjs/common";
+import { Logger } from '@nestjs/common';
 
 const port = process.env.PORT || 4003;
 

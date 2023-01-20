@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { MicroserviceProviderOptions } from '../../../../../packages/shared/src/modules/microservice/microservice.provider';
+import { MicroserviceProviderOptions } from 'shared';
 
 @Injectable()
 export class ExampleConfig implements MicroserviceProviderOptions {

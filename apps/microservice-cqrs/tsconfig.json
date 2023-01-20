@@ -1,21 +1,26 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": false,
-    "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "allowJs": true,
     "outDir": "./dist",
-    "paths": {
-      "shared/*": ["../../packages/shared/src/*"]
-    }
+
+    "incremental": true,
+    "declaration": true,
+
+    "module": "CommonJS",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+
+    "target": "ESNext",
+    "lib": [
+      "ESNext"
+    ],
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules"]
 }

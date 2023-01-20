@@ -6,7 +6,9 @@
       "dependsOn": ["^start"]
     },
     "dev": {
-      "dependsOn": ["^dev"]
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
     },
     "build": {
       "dependsOn": ["^build"],
@@ -20,10 +22,19 @@
     "lint": {
       "outputs": []
     },
+    "lint:fix": {
+      "outputs": []
+    },
+    "dev:check": {
+      "dependsOn": []
+    },
     "pretty": {},
     "deploy": {
       "dependsOn": ["build", "test", "lint"],
       "outputs": []
+    },
+    "clean": {
+      "cache": false
     },
     "gateway#dev": {
       "dependsOn": ["microservice-graphql#dev", "microservice-tcp#dev"]

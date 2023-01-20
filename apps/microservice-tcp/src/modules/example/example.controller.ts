@@ -2,7 +2,7 @@ import { Controller } from '@nestjs/common';
 import { ExampleService } from './example.service';
 import { MessagePattern } from '@nestjs/microservices';
 import { ExampleHelloDto } from './dto/hello.dto';
-import { Args } from 'shared/utils/decorators';
+import { Args } from 'shared';
 
 @Controller()
 export class ExampleController {

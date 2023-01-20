@@ -4,6 +4,7 @@ import { ConfigModule } from './modules/config/config.module';
 import { IntrospectAndCompose } from '@apollo/gateway';
 import { ApolloGatewayDriver, ApolloGatewayDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
+import { HealthModule } from './modules/health';
 
 @Module({
   imports: [
@@ -21,6 +22,8 @@ import { GraphQLModule } from '@nestjs/graphql';
         }),
       },
     }),
+    //
+    HealthModule,
   ],
   providers: [],
 })

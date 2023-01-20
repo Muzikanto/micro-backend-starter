@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { makeHelloWorld } from 'shared/index';
+import { makeHelloWorld } from 'shared';
 
 @Injectable()
 export class ExampleService {

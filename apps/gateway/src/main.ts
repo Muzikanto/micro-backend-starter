@@ -2,8 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger, VersioningType } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
-import { AppConfig } from 'shared/modules/config/app.config';
+// import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import { AppConfig } from './modules/config/app.config';
 
 async function bootstrap() {
   const logger = new Logger('Bootstrap');

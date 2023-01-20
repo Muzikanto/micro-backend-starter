@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "outDir": "./dist",
+
+    "incremental": true,
+    "declaration": true,
+
+    "module": "CommonJS",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+
+    "target": "ESNext",
+    "lib": [
+      "ESNext"
+    ],
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules"]
+}

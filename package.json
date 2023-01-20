@@ -13,14 +13,14 @@
     "build": "npx turbo build",
     "start": "npx turbo start",
     "lint": "npx turbo lint",
-    "pretty": "npx turbo pretty"
+    "lint:fix": "npx turbo lint:fix",
+    "pretty": "npx turbo pretty",
+    "clean": "npx turbo clean && rf -rf ./out",
+    "dev:check": "npx turbo dev:check"
   },
   "workspaces": [
-    "apps/gateway",
-    "apps/microservice-tcp",
-    "apps/microservice-graphql",
-    "apps/microservice-cqrs",
-    "packages/shared"
+    "apps/*",
+    "packages/*"
   ],
   "author": "",
   "license": "ISC"

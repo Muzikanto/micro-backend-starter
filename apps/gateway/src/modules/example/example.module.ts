@@ -3,7 +3,7 @@ import { ExampleController } from './example.controller';
 import { EXAMPLE_TOKEN } from './utils/injection';
 import { ExampleConfig } from '../config/example.config';
 import { ConfigModule } from '../config/config.module';
-import { MicroserviceProvider } from 'shared/modules/microservice/microservice.provider';
+import { MicroserviceProvider } from 'shared';
 
 @Module({
   imports: [ConfigModule],

@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
 import { Transport, TcpOptions } from '@nestjs/microservices';
-import { RpcValidationFilter } from 'shared/utils/rpc-exception-filter';
+import { RpcValidationFilter } from 'shared';
 
 const port = process.env.PORT || 4000;
 

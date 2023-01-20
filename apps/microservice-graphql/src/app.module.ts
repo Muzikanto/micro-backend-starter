@@ -6,7 +6,7 @@ import {
   ApolloFederationDriver,
   ApolloFederationDriverConfig,
 } from '@nestjs/apollo';
-import {HealthModule} from "shared/modules/health/health.module";
+import { HealthModule } from './modules/health';
 
 @Module({
   imports: [

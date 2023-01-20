@@ -1,0 +1,25 @@
+{
+  "extends": "./base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+
+    "incremental": false,
+    "declaration": true,
+
+    "module": "CommonJS",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+
+    "target": "ESNext",
+    "lib": [
+      "ESNext"
+    ],
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

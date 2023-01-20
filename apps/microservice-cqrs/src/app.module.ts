@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { HeroesGameModule } from './modules/heroes/heroes.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TypeormConfig } from 'shared/modules/typeorm';
-import { ConfigModule } from './modules/config/config.module';
+import { ConfigModule } from './modules/config';
+import { TypeormConfig } from './modules/config/typeorm.config';
+import { HealthModule } from './modules/health';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { ConfigModule } from './modules/config/config.module';
       useClass: TypeormConfig,
       imports: [ConfigModule],
     }),
+    HealthModule,
     HeroesGameModule,
   ],
 })

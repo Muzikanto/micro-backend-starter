@@ -2,11 +2,15 @@
   "name": "shared",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "pretty": "pretty-quick --staged"
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "pretty": "pretty-quick --staged",
+    "build": "npm run clean && tsup src/index.ts --format cjs --dts --external @nestjs/common",
+    "dev": "tsup src/index.ts --format cjs --watch --dts --external @nestjs/common",
+    "clean": "rm -rf dist"
   },
   "author": "",
   "license": "ISC",
@@ -15,12 +19,18 @@
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0"
+    "eslint-plugin-prettier": "^4.0.0",
+    "tsup": "^6.5.0"
   },
   "dependencies": {
     "@nestjs/common": "^9.2.1",
     "@nestjs/terminus": "^9.1.4",
     "@nestjs/typeorm": "^9.0.1",
-    "typeorm": "^0.3.11"
+    "@nestjs/microservices": "^9.2.1",
+    "typeorm": "^0.3.11",
+    "tsconfig": "*"
+  },
+  "peerDependencies": {
+    "@nestjs/apollo": "^10.1.7"
   }
 }

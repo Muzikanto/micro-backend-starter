@@ -1,4 +1,4 @@
-export * from './utils/decorators';
-export * from './utils/rpc-exception-filter';
+export * from './utils';
+export * from './modules';
 
 export const makeHelloWorld = (user: string): string => `Hello ${user}`;
